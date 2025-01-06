@@ -1,0 +1,29 @@
+Brief explanation of main.tf blocks:
+
+Provider Block:
+
+Configures AWS provider with region and credentials
+
+
+VPC and Subnets Data Blocks:
+
+Fetches existing default VPC
+Gets two subnets in different availability zones (us-east-1a and us-east-1b)
+
+
+Security Group Block:
+
+Creates security group allowing MySQL traffic (port 3306) inbound
+Allows all outbound traffic
+
+
+DB Subnet Group Block:
+
+Creates a subnet group using the two fetched subnets for RDS high availability
+
+
+RDS Instance Block:
+
+Creates MySQL 8.0 database instance
+Uses t3.micro instance class with 20GB storage
+Configures networking, credentials, and basic settings
